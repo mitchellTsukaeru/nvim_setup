@@ -3,7 +3,6 @@ return {
   opts = {
     cli = {
       picker = "fzf-lua",
-      default = "claude",
       mux = {
         enabled = false,
       },
@@ -23,7 +22,7 @@ return {
     },
     {
       "<c-.>",
-      function() require("sidekick.cli").focus() end,
+      function() require("sidekick.cli").focus({ name = "claude" }) end,
       desc = "Sidekick Focus",
       mode = { "n", "t", "i", "x" },
     },
@@ -39,18 +38,18 @@ return {
     },
     {
       "<leader>at",
-      function() require("sidekick.cli").send({ msg = "{this}" }) end,
+      function() require("sidekick.cli").send({ name = "claude", msg = "{this}" }) end,
       mode = { "x", "n" },
       desc = "Send This",
     },
     {
       "<leader>af",
-      function() require("sidekick.cli").send({ msg = "{file}" }) end,
+      function() require("sidekick.cli").send({ name = "claude", msg = "{file}" }) end,
       desc = "Send File",
     },
     {
       "<leader>av",
-      function() require("sidekick.cli").send({ msg = "{selection}" }) end,
+      function() require("sidekick.cli").send({ name = "claude", msg = "{selection}" }) end,
       mode = { "x" },
       desc = "Send Visual Selection",
     },
