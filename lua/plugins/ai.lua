@@ -1,5 +1,11 @@
 return {
   "folke/sidekick.nvim",
+  config = function(_, opts)
+    require("sidekick").setup(opts)
+    -- Give the sidekick panel a darker, distinct background
+    local bg = "#1a1b26" -- tokyonight "night" base, tweak to taste
+    vim.api.nvim_set_hl(0, "SidekickChat", { bg = bg })
+  end,
   opts = {
     cli = {
       picker = "fzf-lua",
