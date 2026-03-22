@@ -1,5 +1,6 @@
 local opt = vim.opt
 opt.clipboard = "unnamedplus"
+opt.autoread = true
 
 opt.nu = true                 -- set line numbers
 opt.relativenumber = true     -- use relative line numbers
