@@ -26,3 +26,21 @@ opt.listchars = {
   extends = "❯",    -- Indicates the line continues off the right side of the screen
   precedes = "❮",   -- Indicates the line continues off the left side of the screen
 }
+
+-- Show diagnostic messages as virtual text next to the line
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = "●",
+    spacing = 2,
+  },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN]  = " ",
+      [vim.diagnostic.severity.INFO]  = " ",
+      [vim.diagnostic.severity.HINT]  = " ",
+    },
+  },
+  underline = true,
+  severity_sort = true,
+})
