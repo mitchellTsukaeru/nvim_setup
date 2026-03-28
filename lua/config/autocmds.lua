@@ -1,3 +1,11 @@
+-- Auto-close sidekick when quitting the last buffer
+vim.api.nvim_create_autocmd("QuitPre", {
+  callback = function()
+    local ok, cli = pcall(require, "sidekick.cli")
+    if ok then cli.close() end
+  end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local map = function(mode, lhs, rhs, desc)

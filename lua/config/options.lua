@@ -12,7 +12,8 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 
-opt.wrap = false
+opt.wrap = true
+opt.linebreak = true
 
 -- Enable the display of invisible characters
 opt.list = true

@@ -12,6 +12,9 @@ return {
       mux = {
         enabled = false,
       },
+      keys = {
+        buffers = false, -- free <c-b> for Claude Code background task
+      },
     },
   },
   keys = {

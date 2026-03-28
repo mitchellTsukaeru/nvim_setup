@@ -8,6 +8,13 @@ return {
   ---@type fzf-lua.Config|{}
   ---@diagnostic disable: missing-fields
   opts = {
+	fzf_opts = { ["--no-multi"] = true },
+	keymap = {
+		fzf = {
+			["tab"] = "down",
+			["shift-tab"] = "up",
+		},
+	},
 	-- Use 'fd' instead of 'find'  (faster and modern)
 	files = {
 		cmd = "fd --color=never --type f --hidden --follow --exclude .git",
